@@ -34,7 +34,7 @@ int main()
 	}
 
 	
-	HugeInt a("1345");
+	HugeInt a("9000");
 	HugeInt b("999");
 	HugeInt c("109");
 

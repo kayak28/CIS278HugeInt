@@ -231,14 +231,20 @@ HugeInt operator+ (const HugeInt& operand1, const HugeInt& operand2)
 			{
 				sumInt.digits[i] = (int) (sumInt.digits[i] % 10);
 				sumInt.digits[i+1] += 1;
+				
+				if(i == sumInt.length-1)
+				{
+					sumInt.length += 1;
+				}
 			}
+			
 		}
 	}
 	else
 	{
 		sumInt.length = operand2.length;
 		for(int i = 0; i < operand2.length; i++)
-		{
+		{//make a copy
 			sumInt.digits[i] = operand2.digits[i];
 		}
 		for(int k = 0; k < operand1.length; k++)
@@ -249,9 +255,15 @@ HugeInt operator+ (const HugeInt& operand1, const HugeInt& operand2)
 			{
 				sumInt.digits[k] = (int) (sumInt.digits[k] % 10);
 				sumInt.digits[k+1] += 1;
+				
+				if(k == sumInt.length-1)
+				{
+					sumInt.length += 1;
+				}
 			}
 		}
 	}
+	
 
 	return sumInt;
 }
