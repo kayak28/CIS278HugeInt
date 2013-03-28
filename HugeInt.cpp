@@ -62,6 +62,7 @@ int HugeInt::numDigits() const
  
 int HugeInt::operator[] (int n)
 {
+	//int fals = -1;
 	if(n >= 0 && n < length)
 	{
 		return digits[n];
@@ -240,14 +241,14 @@ HugeInt operator+ (const HugeInt& operand1, const HugeInt& operand2)
 		{
 			sumInt.digits[i] = operand2.digits[i];
 		}
-		for(i = 0; i < operand1.length; i++)
+		for(int k = 0; k < operand1.length; k++)
 		{
 			
-			sumInt.digits[i] += operand1.digits[i];
-			if(sumInt.digits[i] >= 10)
+			sumInt.digits[k] += operand1.digits[k];
+			if(sumInt.digits[k] >= 10)
 			{
-				sumInt.digits[i] = (int) (sumInt.digits[i] % 10);
-				sumInt.digits[i+1] += 1;
+				sumInt.digits[k] = (int) (sumInt.digits[k] % 10);
+				sumInt.digits[k+1] += 1;
 			}
 		}
 	}
