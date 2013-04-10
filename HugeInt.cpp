@@ -23,26 +23,20 @@ HugeInt::HugeInt()
 
 HugeInt::HugeInt(string value)
 {
-	//int length;
 	for(int n = 0; n < SIZE; n++)
 	{//initialize array 
 	 //in order to avoid to enter unknow value automatically 
 		digits[n] = 0;
-		//cout << digits[n] << "\n";
 	}
-	//cout << "2nd";
 
 	length=value.length();
 	if(allDigits(value))
 	{
-		//cout << "3rd\n";
 		for(int i = 0; i < length + 1; i++)
 		{
 			
 			digits[i] = atoi(&value[value.length()-1 - i]);
 			value[value.length() - 1 - i] = 0x00;
-			//cout << "i = " << i << "\n" ;
-			//cout << "digit = " << digits[i]<< "\n";
 		}
 
 	}
@@ -62,14 +56,9 @@ int HugeInt::numDigits() const
  
 int &HugeInt::operator[] (int n)
 {
-	cout << "inside []\n";
-	//int fals = -1;
 	if(n <= 0 && n > length)
-	{	cout << "length = " << length << "\n";
-		cout << "before exit from cpp\n";
 		exit(-1);
 	}
-	cout << "out side of if\n";
 	return this->digits[n];
 }
 
@@ -87,8 +76,6 @@ HugeInt HugeInt::operator++()
 	}
 
 	int index = 0;
-	//cout<<"preIncrement=";
-	//cout<<preIncrement<<"\n";
 
 	preIncrement.digits[index]++;
 	
@@ -117,7 +104,6 @@ HugeInt HugeInt::operator++()
 HugeInt HugeInt::operator++(int)
 {//opeartor overloading with post-increment 
 
-	//HugeInt postIncrement = *this;
 	HugeInt postIncrement("0");
 
 	postIncrement.length=this->length;
@@ -128,8 +114,6 @@ HugeInt HugeInt::operator++(int)
 	}
 
 	int index = 0;	
-	//cout<<"postIncrement=";
-	//cout<<postIncrement<<"\n";
 	
 	this->digits[index] = this->digits[index] + 1;
 	while(index < length)

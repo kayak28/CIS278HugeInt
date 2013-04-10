@@ -13,10 +13,6 @@ int main()
 	
 	HugeInt bigInt2("1239");
 	cout << bigInt2;
-/*	
-	printf("BigInt1 contains: %d digits\n", bigInt1.numDigits());
-	printf("BigInt2 contains: %d digits\n", bigInt2.numDigits());
-*/
 	if(bigInt1 == bigInt2) 
 	{
 		cout << "BigInt1 and BigInt2 have the same value\n";
@@ -42,9 +38,6 @@ int main()
 	cout << "1345 = " << a ;
 	cout << "999 = "<<b ;
 	cout << "109 = "<<c ;
-	
-	//preincrement test
-	//a = ++b;
 
 	cout << "After pre-increment\n";	
 	cout << "1345+1 =" <<++a ;
@@ -52,13 +45,6 @@ int main()
 	cout << "109+1 =" <<++c ;
 	
 	
-	//postincrement test
-	/*
-	cout << "before post-increment\n";
-	cout << a << "\n"; 
-	cout << b << "\n"; 
-	*/
-	//bigInt = b++;
 	cout << "before post-increment\n";
 	cout << "a = " << a;
 	cout << "\nb = " << b;
@@ -73,15 +59,19 @@ int main()
 	cout << "\nb = " << b;
 	cout << "\nc = " << c;
 
-
+	cout << "Addition\n";
 	cout << "a + b = " <<  a + b;
-	
+	cout << "check number of digit\n";
 	printf("a contains: %d digits\n", a.numDigits());
 	printf("b contains: %d digits\n", b.numDigits());
 	printf("c contains: %d digits\n", c.numDigits());
-	cout << "operator overloading baracket\n";   
-	cout << "a[1] = " <<  a[1] << "\n";   
-	a[1] = 6;
+	cout << "\noperator overloading baracket\n";   
+	cout << "a[1] = " <<  a[1] << "\n";
+	/* 1st: do a[1] that means activate operator overloading[];
+	 * 2nd: execute cout << "a[1] = " << returned value  
+	 */
+   
+	a[1] = 6;//insert n th digit to be 6
 	cout << "a[1] = " <<  a[1] << "\n"; 
 	cout << "a = " << a << "\n";  
 	/*
