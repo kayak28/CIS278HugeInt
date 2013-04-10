@@ -79,9 +79,11 @@ int main()
 	printf("a contains: %d digits\n", a.numDigits());
 	printf("b contains: %d digits\n", b.numDigits());
 	printf("c contains: %d digits\n", c.numDigits());
-	int element = 0;
-	element = a[1];
-	cout << "elem = " <<  element; 
+	cout << "operator overloading baracket\n";   
+	cout << "a[1] = " <<  a[1] << "\n";   
+	a[1] = 6;
+	cout << "a[1] = " <<  a[1] << "\n"; 
+	cout << "a = " << a << "\n";  
 	/*
 	int index = 0;
 	cout << "which digits would you like to know?\n";	

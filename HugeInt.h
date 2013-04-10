@@ -7,7 +7,6 @@ class HugeInt
 		HugeInt(string value);
 		
 		int numDigits() const;
-		int operator[] (int n);
 		HugeInt operator ++();
 		//HugeInt operator =();
 		HugeInt operator ++(int);
@@ -15,6 +14,8 @@ class HugeInt
 		bool operator !=(const HugeInt& operand) const;
 		friend ostream& operator <<(ostream& out, const HugeInt& obj);
 		friend HugeInt operator+(const HugeInt& operend1, const HugeInt& obj);
+		
+		int &operator[] (int n);
 		static bool allDigits(string str);
 
 	private:
@@ -22,5 +23,13 @@ class HugeInt
 		int digits[SIZE];
 		int length;
 };
-		//HugeInt::SIZE = 50;
+//int HugeInt::&operator [](int i);
+/*{
+	if(n < 0 && n > length)
+	{
+		return -1;
+	}
+	return digits[n];
+}
+*/		//HugeInt::SIZE = 50;
 		//static const int HugeInt::SIZE = 50;	

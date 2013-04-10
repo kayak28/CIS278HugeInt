@@ -1,7 +1,7 @@
 #include <iostream>
 #include "math.h"
 #include "HugeInt.h"
-#include "stdlib.h"//where atoi is tored 
+#include "stdlib.h"//where atoi and exit  is tored 
 using namespace std; 
 
 HugeInt::HugeInt()
@@ -60,17 +60,17 @@ int HugeInt::numDigits() const
 
 }
  
-int HugeInt::operator[] (int n)
+int &HugeInt::operator[] (int n)
 {
+	cout << "inside []\n";
 	//int fals = -1;
-	if(n >= 0 && n < length)
-	{
-		return digits[n];
+	if(n <= 0 && n > length)
+	{	cout << "length = " << length << "\n";
+		cout << "before exit from cpp\n";
+		exit(-1);
 	}
-	else
-	{
-		return -1;
-	}
+	cout << "out side of if\n";
+	return this->digits[n];
 }
 
 HugeInt HugeInt::operator++()
